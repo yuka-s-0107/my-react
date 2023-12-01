@@ -1,45 +1,42 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import MyHello from "./MyHello";
+// import MyHello from "./MyHello";
 import EventBasic from "./textbook";
-import OmikujiButton from "./Omikuji";
-import { Today } from "./textbook";
+// import OmikujiButton from "./Omikuji";
+// import { Today } from "./textbook";
 // import StateBasic from "./textbook";
 
+import books from "./books";
+import ForList from "./ForList";
+import Omikuji2 from "./Omikuji2";
+import OmikujiList from "./OmikujiList";
+import OmikujiList2 from "./OmikujiList2";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-const name = "江戸川コナン";
+// root.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
+
 root.render(
   <>
     <div>
-      <p> こんにちは、世界！</p>
-      <p>はじめまして、React</p>
-    </div>
-    <div>
-      <p>{name}、探偵さ。</p>
-    </div>
-    <div>
-      <MyHello myName="ゲゲゲの鬼太郎" />
-      <EventBasic type="date" />
+      {/* <MyHello myName="ゲゲゲの鬼太郎" /> */}
+      <EventBasic type="time" />
     </div>
 
-    <br></br>
-    <p>★おみくじ</p>
-    <div>
-      <Today type="date"></Today>
-      <OmikujiButton />
-    </div>
     {/* <div>
-      <StateBasic init={0}></StateBasic>
+      <Today type="date"></Today>
     </div> */}
+
+    <ForList src={books} />
+    <Omikuji2 init={""} />
+    <OmikujiList src={OmikujiList2} />
   </>
 );
 
