@@ -23,7 +23,7 @@ export default function Omikuji2({ init }) {
 
   return (
     <div>
-      <button onClick={getOmikuji}>おみくじ2</button>
+      <button onClick={getOmikuji}>おみくじリスト</button>
       <p>{state}</p>
     </div>
   );

@@ -12,8 +12,15 @@ import reportWebVitals from "./reportWebVitals";
 
 // import books from "./books";
 // import ForList from "./ForList";
+// import ForFilter from "./ForFilter";
+// import ForSort from "./ForSort";
+import ForItem from "./ForItem";
+// import StyledPanel from "./StyledPanel";
+// import StateParent from "./StatePrent";
+
 // import Omikuji2 from "./Omikuji2";
 import StateOmikuji from "./StateOmikuji";
+import books from "./books";
 // import StateTodo from "./StateTodo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -25,16 +32,26 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <>
-    <div>
-      {/* <MyHello myName="ゲゲゲの鬼太郎" /> */}
-      {/* <EventBasic type="time" /> */}
-    </div>
+    {/* <div> */}
+    {/* <MyHello myName="ゲゲゲの鬼太郎" /> */}
+    {/* <EventBasic type="time" /> */}
+    {/* </div> */}
 
     {/* <div>
       <Today type="date"></Today>
     </div> */}
 
     {/* <ForList src={books} /> */}
+    {/* <ForFilter src={books} /> */}
+    {/* <ForSort src={books} /> */}
+    {/* <ForItem books={{ ...books[0] }}></ForItem> */}
+    <ForItem src={books} />
+    {/* <StyledPanel>
+      <p>メンバー募集中！</p>
+      <p>ようこそ、WINGSプロジェクトへ！！</p>
+    </StyledPanel> */}
+    {/* <StateParent /> */}
+
     {/* <Omikuji2 init={""} /> */}
     {/* <StateTodo /> */}
     <StateOmikuji />
