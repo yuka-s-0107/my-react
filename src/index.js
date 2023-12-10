@@ -10,18 +10,25 @@ import reportWebVitals from "./reportWebVitals";
 // import { Today } from "./textbook";
 // import StateBasic from "./textbook";
 
-// import books from "./books";
+import books from "./books";
 // import ForList from "./ForList";
 // import ForFilter from "./ForFilter";
 // import ForSort from "./ForSort";
 import ForItem from "./ForItem";
+import Download from "./Download";
 // import StyledPanel from "./StyledPanel";
 // import StateParent from "./StatePrent";
 
 // import Omikuji2 from "./Omikuji2";
-import StateOmikuji from "./StateOmikuji";
-import books from "./books";
+// import StateOmikuji from "./StateOmikuji";
+// import books from "./books";
 // import StateTodo from "./StateTodo";
+
+// import StateForm from "./StateForm";
+// import FormTextarea from "./FormTextarea";
+// import FormSelect from "./FormSelect";
+// import FormList from "./FormList";
+// import FormRadio from "./FormRadio";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(
@@ -45,16 +52,22 @@ root.render(
     {/* <ForFilter src={books} /> */}
     {/* <ForSort src={books} /> */}
     {/* <ForItem books={{ ...books[0] }}></ForItem> */}
-    <ForItem src={books} />
+    <ForItem books={isbn:item.isbm} {title:item.title} {price:item.price} {summary:item.summary} {download:true}><ForItem/>
     {/* <StyledPanel>
       <p>メンバー募集中！</p>
       <p>ようこそ、WINGSプロジェクトへ！！</p>
     </StyledPanel> */}
     {/* <StateParent /> */}
 
+    {/* <StateForm />
+    <FormTextarea />
+    <FormSelect />
+    <FormList />
+    <FormRadio /> */}
+
     {/* <Omikuji2 init={""} /> */}
     {/* <StateTodo /> */}
-    <StateOmikuji />
+    {/* <StateOmikuji /> */}
   </>
 );
 
