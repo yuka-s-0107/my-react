@@ -4,7 +4,7 @@ const books = [
     title: "これからはじめるVue.js 3実践入門",
     price: 3400,
     summary: "JavaScriptフレームワーク「Vue.js」について・・・",
-    download: true,
+    download: false,
   },
   {
     isbn: "978-4-8156-1337-1",

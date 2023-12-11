@@ -52,7 +52,9 @@ root.render(
     {/* <ForFilter src={books} /> */}
     {/* <ForSort src={books} /> */}
     {/* <ForItem books={{ ...books[0] }}></ForItem> */}
-    <ForItem books={isbn:item.isbm} {title:item.title} {price:item.price} {summary:item.summary} {download:true}><ForItem/>
+    {books.map((book) => (
+      <ForItem book={book} />
+    ))}
     {/* <StyledPanel>
       <p>メンバー募集中！</p>
       <p>ようこそ、WINGSプロジェクトへ！！</p>
