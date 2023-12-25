@@ -7,10 +7,12 @@ export default function FormList() {
   });
   //リストボックスの変更時に入力値をStateに反映
   const handleFormList = (e) => {
+    console.log("aaa");
     //選択肢を格納するための配列
     const data = [];
     //<option>要素を順に捜査し、選択状態にある値を配列に追加
     const opts = e.target.options;
+    console.log(e);
     for (const opt of opts) {
       if (opt.selected) {
         data.push(opt.value);

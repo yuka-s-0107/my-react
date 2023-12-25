@@ -7,6 +7,8 @@ export default function StateForm() {
     age: 18,
   });
   const handleForm = (e) => {
+    console.log(e.target.name);
+    console.log(e.target.value);
     setForm({
       ...form,
       [e.target.name]: e.target.value,

@@ -15,7 +15,8 @@ import books from "./books";
 // import ForFilter from "./ForFilter";
 // import ForSort from "./ForSort";
 import ForItem from "./ForItem";
-import Download from "./Download";
+import ListItem from "./chap3/ListItem";
+
 // import StyledPanel from "./StyledPanel";
 // import StateParent from "./StatePrent";
 
@@ -24,11 +25,13 @@ import Download from "./Download";
 // import books from "./books";
 // import StateTodo from "./StateTodo";
 
-// import StateForm from "./StateForm";
-// import FormTextarea from "./FormTextarea";
-// import FormSelect from "./FormSelect";
-// import FormList from "./FormList";
-// import FormRadio from "./FormRadio";
+import StateForm from "./StateForm";
+import FormTextarea from "./FormTextarea";
+import FormSelect from "./FormSelect";
+import FormList from "./FormList";
+import FormRadio from "./FormRadio";
+import FormBasic from "./chap4_HookYup/FormBasic";
+import FormYup from "./chap4_HookYup/FormYup";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(
@@ -52,9 +55,9 @@ root.render(
     {/* <ForFilter src={books} /> */}
     {/* <ForSort src={books} /> */}
     {/* <ForItem books={{ ...books[0] }}></ForItem> */}
-    {books.map((book) => (
-      <ForItem book={book} />
-    ))}
+    {/* {books.map((book, index) => (
+      <ForItem book={book} key={index} />
+    ))} */}
     {/* <StyledPanel>
       <p>メンバー募集中！</p>
       <p>ようこそ、WINGSプロジェクトへ！！</p>
@@ -70,6 +73,11 @@ root.render(
     {/* <Omikuji2 init={""} /> */}
     {/* <StateTodo /> */}
     {/* <StateOmikuji /> */}
+
+    {/* <ListItem></ListItem> */}
+
+    <FormBasic />
+    <FormYup />
   </>
 );
 
