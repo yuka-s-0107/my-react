@@ -22,7 +22,7 @@ const schema = yup.object({
     .min(10, "${label}は${min}文字以上で入力してください。")
     .test(
       "ng",
-      (label) => "${label}にNGワードが含まれています。",
+      ({ label }) => "${label}にNGワードが含まれています。",
       (value) => {
         const ngs = ["暴力", "死"];
         for (const ng of ngs) {
