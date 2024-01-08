@@ -8,6 +8,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import AlarmIcon from "@mui/icons-material/Alarm";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
@@ -43,32 +45,61 @@ export default function TodoList() {
 
   return (
     <>
-      <Stack direction="row" spacing={2}>
-        <form onSubmit={handleSubmit(onSubmit, onError)} noValidate>
-          <div>
-            <label htmlFor="todoName">TODO:</label>
+      <form
+        onSubmit={handleSubmit(onSubmit, onError)}
+        // style={{ width: "1000px" }}
+        noValidate
+      >
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={1}>
+              <label htmlFor="todoName">TODO:</label>
+            </Grid>
+            <Grid item xs={3}>
+              <input
+                id="todoName"
+                type="text"
+                {...register("todoName")}
+                value={todo}
+                onChange={(data) => setTodo(data.target.value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <Button
+                type="submit"
+                variant="contained"
+                endIcon={<SendIcon />}
+                size="small"
+              >
+                送信
+              </Button>
+            </Grid>
+          </Grid>
+        </Box>
+        <div>
+          {/* <label htmlFor="todoName">TODO:</label>
             <input
               id="todoName"
               type="text"
               {...register("todoName")}
               value={todo}
               onChange={(data) => setTodo(data.target.value)}
-            />
+            /> */}
 
-            {/* <button type="submit">送信</button> */}
-            <Button
+          {/* <button type="submit">送信</button> */}
+          {/* <Button
               type="submit"
               variant="contained"
               endIcon={<SendIcon />}
               size="small"
             >
               送信
-            </Button>
+            </Button> */}
 
-            <div style={{ color: "red" }}>{errors.todoName?.message}</div>
-          </div>
-        </form>
-      </Stack>
+          <div style={{ color: "red" }}>{errors.todoName?.message}</div>
+        </div>
+      </form>
+
       {/* TODOリスト */}
       <Stack direction="row" spacing={1}>
         <div>
@@ -87,13 +118,13 @@ export default function TodoList() {
                   削除
                 </Button>
 
-                {/* <IconButton
+                <IconButton
                   aria-label="delete"
                   onClick={() => onDelete(todo.id)}
                   size="large"
                 >
                   <DeleteIcon fontSize="inherit" />
-                </IconButton> */}
+                </IconButton>
               </li>
             ))}
           </ul>

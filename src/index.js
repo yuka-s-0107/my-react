@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 // import App from "./App";
@@ -33,6 +33,11 @@ import FormRadio from "./FormRadio";
 import FormBasic from "./chap4_HookYup/FormBasic";
 import FormYup from "./chap4_HookYup/FormYup";
 import TodoList from "./chap4_HookYup/TodoList";
+import QueryPre from "./chap6-3_API/QueryPre";
+import { QueryClient, QueryClientProvider } from "react-query";
+import QueryBasic from "./chap6-3_API/QueryBasic";
+import QuerySuspense from "./chap6-3_API/QuerySuspense";
+import { ErrorBoundary } from "react-error-boundary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(
@@ -40,6 +45,14 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //     <App />
 //   </React.StrictMode>
 // );
+const cli = new QueryClient();
+const cli2 = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true,
+    },
+  },
+});
 
 root.render(
   <>
@@ -79,7 +92,19 @@ root.render(
 
     {/* <FormBasic />
     <FormYup /> */}
-    <TodoList />
+    {/* <TodoList /> */}
+
+    {/* <QueryPre />
+    <QueryClientProvider client={cli}>
+      <QueryBasic />
+    </QueryClientProvider> */}
+    <Suspense fallback={<p>Loading...</p>}>
+      <ErrorBoundary fallback={<div>エラーが発生しました</div>}>
+        <QueryClientProvider client={cli2}>
+          <QuerySuspense />
+        </QueryClientProvider>
+      </ErrorBoundary>
+    </Suspense>
   </>
 );
 
