@@ -7,7 +7,7 @@ const fetchWeather = async () => {
   //ダミーの遅延
   await sleep(2000);
   const res = await fetch(
-    "https://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}.png"
+    `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&lang=ja&appid=54f677953b12d3435edfd38259a99356`
   );
   if (res.ok) {
     return res.json();
@@ -21,9 +21,7 @@ export default function QuerySuspense() {
   return (
     <figure>
       <img
-        src={
-          "https://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}.png"
-        }
+        src={`https://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}.png`}
         alt={data?.weather?.[0]?.main}
       />
       <figcaption>{data?.weather?.[0]?.description}</figcaption>

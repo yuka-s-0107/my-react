@@ -38,6 +38,9 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import QueryBasic from "./chap6-3_API/QueryBasic";
 import QuerySuspense from "./chap6-3_API/QuerySuspense";
 import { ErrorBoundary } from "react-error-boundary";
+import { RouterProvider } from "react-router-dom";
+import routesBasic from "./chap8/routesBasic";
+import routesLink from "./chap8/routesLink";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(
@@ -97,14 +100,17 @@ root.render(
     {/* <QueryPre />
     <QueryClientProvider client={cli}>
       <QueryBasic />
-    </QueryClientProvider> */}
+    </QueryClientProvider>
     <Suspense fallback={<p>Loading...</p>}>
       <ErrorBoundary fallback={<div>エラーが発生しました</div>}>
         <QueryClientProvider client={cli2}>
           <QuerySuspense />
         </QueryClientProvider>
       </ErrorBoundary>
-    </Suspense>
+    </Suspense> */}
+
+    {/* <RouterProvider router={routesBasic} /> */}
+    <RouterProvider router={routesLink} />
   </>
 );
 
